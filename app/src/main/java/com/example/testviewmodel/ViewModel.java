@@ -7,7 +7,7 @@ public class ViewModel {
         resultCountIncremented = i+1;
     }
 
-    public String getResultCountIncremented() {
-        return String.valueOf(resultCountIncremented);
+    public int getResultCountIncremented() {
+        return resultCountIncremented;
     }
 }

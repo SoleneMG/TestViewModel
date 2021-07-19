@@ -16,13 +16,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         count = findViewById(R.id.count);
+        count.setText(String.valueOf(viewModel.getResultCountIncremented()));
     }
 
     public void onClickIncrementButton(View view) {
         //todo plutot que de récupérer la valeur de l'affichage, créé une variable dans ton viewmodel, c'est elle qui sera envoyée à l'affichage
-        int countInt = Integer.parseInt((String) count.getText());
+        int countInt = viewModel.getResultCountIncremented();
         viewModel.increment(countInt);
-        count.setText(viewModel.getResultCountIncremented());
+        count.setText(String.valueOf(viewModel.getResultCountIncremented()));
 
     }
 }
