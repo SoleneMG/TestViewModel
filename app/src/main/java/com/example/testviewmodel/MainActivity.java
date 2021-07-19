@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickIncrementButton(View view) {
         //todo plutot que de récupérer la valeur de l'affichage, créé une variable dans ton viewmodel, c'est elle qui sera envoyée à l'affichage
-        int countInt = viewModel.getResultCountIncremented();
-        viewModel.increment(countInt);
+        viewModel.increment();
         count.setText(String.valueOf(viewModel.getResultCountIncremented()));
 
     }
