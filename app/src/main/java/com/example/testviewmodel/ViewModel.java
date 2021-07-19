@@ -1,8 +1,13 @@
 package com.example.testviewmodel;
 
 public class ViewModel {
+    private static int resultCountIncremented;
 
-    public int increment(int i){
-        return i+1;
+    public void increment(int i){
+        resultCountIncremented = i+1;
+    }
+
+    public String getResultCountIncremented() {
+        return String.valueOf(resultCountIncremented);
     }
 }

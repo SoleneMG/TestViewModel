@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private TextView count;
-    //todo jaune
-    private ViewModel viewModel = new ViewModel();
+    //todo jaune // pas tapay
+    private final ViewModel viewModel = new ViewModel();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
     public void onClickIncrementButton(View view) {
         //todo plutot que de récupérer la valeur de l'affichage, créé une variable dans ton viewmodel, c'est elle qui sera envoyée à l'affichage
         int countInt = Integer.parseInt((String) count.getText());
-        int result = viewModel.increment(countInt);
-        count.setText(String.valueOf(result));
+        viewModel.increment(countInt);
+        count.setText(viewModel.getResultCountIncremented());
 
     }
 }
